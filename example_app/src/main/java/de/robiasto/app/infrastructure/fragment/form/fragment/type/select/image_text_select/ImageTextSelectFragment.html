@@ -1,0 +1,38 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.form.fragment.type.select.image_text_select.ImageTextSelectFragment" */-->
+<div xmlns:th="http://www.thymeleaf.org" xmlns:af="http://www.w3.org/1999/xhtml">
+    <th:block th:fragment="ImageTextSelectFragment(arguments)">
+        <div
+            th:id="${'option-container-' + arguments.name}"
+            th:class="${!arguments.multiple ? 'hidden' : 'mb-2.5 overflow-y-scroll'}"
+            th:classappend="${!arguments.multiple ? '' : ' h-[340px] option-container bg-gray-50'}"
+        >
+            <th:block th:each="optionContent : ${arguments.options}" af:value="${optionContent}"></th:block>
+        </div>
+
+        <th:block af:value="${arguments.selectFragment}"></th:block>
+
+        <button
+            th:id="${'add-button-' + arguments.name}"
+            th:if="${arguments.multiple}"
+            type="button"
+            th:aria-description="#{button.add}"
+            class="on-disable-hide mt-[4px] rounded-md border border-gray-300 px-2 py-1 text-xs font-medium text-gray-700 shadow-sm duration-150 ease-in-out hover:border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:text-gray-300"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="float-left block size-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+            </svg>
+            <span class="float-left ml-1 block leading-[24px]" th:text="#{button.add}"></span>
+        </button>
+    </th:block>
+</div>

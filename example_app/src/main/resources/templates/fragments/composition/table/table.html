@@ -1,0 +1,30 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.table.FragmentTable" */-->
+<!doctype html>
+<html
+    lang="en"
+    xmlns="http://www.w3.org/1999/html"
+    xmlns:af="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+>
+    <!-- start::table -->
+    <div th:fragment="table(arguments)" th:classappend="${arguments.getCssClassesToAdd()}">
+        <div class="width-[100%] max-xl:overflow-auto">
+            <table class="w-full" th:if="${arguments.getHeadCols() != null || arguments.getRows() != null}">
+                <thead>
+                    <tr>
+                        <th:block af:value="${arguments.getHeadCols}"></th:block>
+                    </tr>
+                </thead>
+
+                <tbody class="bg-white">
+                    <tr th:each="row : ${arguments.getRows()}">
+                        <th:block af:value="${row}"></th:block>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <th:block af:value="${arguments.getPagination()}" th:if="${arguments.getPagination() != null}"></th:block>
+    </div>
+    <!-- end::table -->
+</html>

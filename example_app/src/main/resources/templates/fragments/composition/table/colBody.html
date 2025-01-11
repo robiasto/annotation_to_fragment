@@ -1,0 +1,24 @@
+<!doctype html>
+<html
+    lang="en"
+    xmlns="http://www.w3.org/1999/html"
+    xmlns:af="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+>
+    <table>
+        <tbody>
+            <tr>
+              <!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.table.FragmentColBody" */-->
+                <td
+                    class="px-6 py-4 text-sm leading-5 text-gray-700"
+                    th:classappend="${arguments.getCssClassesToAdd()}"
+                    th:data-col-name="${arguments.getName()}"
+                    th:fragment="colBody(arguments)"
+                >
+                    <th:block af:value="${arguments.getContent()}"></th:block>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- end::colBody -->
+</html>

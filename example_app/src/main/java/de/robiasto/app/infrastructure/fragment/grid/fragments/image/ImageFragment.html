@@ -1,0 +1,12 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.image.ImageFragment"*/-->
+<!doctype html>
+<th:block xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="ImageFragment(arguments)">
+        <img
+                th:src="${arguments.src != null ? arguments.src : '/svg/add-image.svg'}"
+                th:alt="${arguments.alt}"
+                th:classappend="${arguments.src == null} ?'p-6':''"
+                class="inline-block object-cover w-16 h-16 rounded-full overflow-hidden bg-gray-100 cursor-pointer"
+        >
+    </th:block>
+</th:block>

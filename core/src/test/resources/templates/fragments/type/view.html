@@ -1,0 +1,7 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:af="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div class="root-view" th:data-test-fragment="view"
+     th:fragment="view(arguments)">
+    <div af:value="${arguments.getViewFragments()}" th:class="parent-view"></div>
+</div>
+</html>

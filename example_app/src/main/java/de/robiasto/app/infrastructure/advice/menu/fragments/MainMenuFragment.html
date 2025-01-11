@@ -1,0 +1,143 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.advice.menu.fragments.MainMenuFragment"*/-->
+<!doctype html>
+<th:block xmlns:af="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="MainMenuFragment(arguments)">
+        <!-- start::mobileMenu -->
+        <th:block af:value="${arguments.getMobile()}"></th:block>
+
+        <!-- start::desktopMenu -->
+        <th:block af:value="${arguments.getDesktop()}"></th:block>
+    </th:block>
+
+    <!-- start::mobile -->
+    <div id="mobile">
+        <div
+            @click.outside="close"
+            @keydown.window.escape="close"
+            th:fragment="mobileMenu(arguments)"
+            x-data="topBarMenu"
+        >
+            <!-- start::show menu -->
+            <button
+                @click.stop="open"
+                class="fixed left-0 top-5 z-20 border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 xl:hidden"
+                type="button"
+                x-show="isHidden()"
+            >
+                <span class="sr-only">Open sidebar</span>
+                <svg
+                    aria-hidden="true"
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </button>
+            <!-- end::show Menu -->
+
+            <!-- start::hide Menu -->
+            <button
+                @click.stop="close"
+                class="fixed left-0 top-5 z-20 border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 xl:hidden"
+                type="button"
+                x-show="isVisible()"
+            >
+                <span class="sr-only">Close sidebar</span>
+                <svg
+                    aria-hidden="true"
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                >
+                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <!-- end::hide menu -->
+
+            <div
+                class="fixed top-16 z-10 w-full bg-white shadow-lg xl:hidden"
+                x-show="isVisible()"
+                x-transition:enter="transition- ease-in duration-200"
+                x-transition:enter-end="top-14"
+                x-transition:enter-start="top-[-20px]"
+                x-transition:leave="transition-opacity ease-linear duration-100"
+                x-transition:leave-end="opacity-0"
+                x-transition:leave-start="opacity-100"
+            >
+                <div class="flex-1 overflow-y-auto">
+                    <!-- tag::mobile-nav[] -->
+                    <nav class="space-y-1 px-2" aria-label="mobile navigation">
+                        <th:block af:value="${arguments.getMenuItemList()}"></th:block>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- end::mobileMenu -->
+        <!-- start::mobileButton[] -->
+        <a
+            class="group z-10 flex items-center rounded-md px-2 py-2 text-base font-medium"
+            th:classappend="${arguments.isActive()}? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'"
+            th:fragment="mobileButton(arguments)"
+            th:href="${arguments.getMenuItem().getLink()}"
+        >
+            <div
+                class="mr-4 h-6 w-6 flex-shrink-0"
+                th:classappend="${arguments.isActive()}?'text-gray-500':'text-gray-400 group-hover:text-gray-500'"
+            >
+                <svg th:replace="(~{${arguments.getMenuItem().getIcon()}})"></svg>
+            </div>
+            <th:block
+                th:text="${arguments.getMenuItem().isTranslated() ? #messages.msg(arguments.getMenuItem().getTitle()) : arguments.getMenuItem().getTitle()}"
+            ></th:block>
+        </a>
+        <!-- end::mobileButton[] -->
+    </div>
+    <!-- end::mobile -->
+
+    <!-- start::desktop -->
+    <div id="desktop">
+        <!-- start::desktopMenu -->
+        <div
+            class="hidden pt-14 xl:fixed xl:inset-y-0 xl:flex xl:w-64 xl:flex-col"
+            th:fragment="desktopMenu(arguments)"
+        >
+            <div class="flex flex-grow flex-col overflow-y-auto border-r border-gray-200 bg-white pt-5">
+                <div class="mt-5 flex flex-grow flex-col">
+                    <nav class="flex-1 space-y-1 px-2 pb-4" aria-label="desktop navigation">
+                        <th:block af:value="${arguments.getMenuItemList()}"></th:block>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- end::desktopMenu -->
+        <!-- tag::desktopButton[] -->
+        <a
+            class="group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+            th:classappend="${arguments.isActive()}? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'"
+            th:fragment="desktopButton(arguments)"
+            th:href="${arguments.getMenuItem().getLink()}"
+        >
+            <div
+                class="mr-3 h-6 w-6 flex-shrink-0"
+                th:classappend="${arguments.isActive()}?'text-gray-500':'text-gray-400 group-hover:text-gray-500'"
+            >
+                <svg th:replace="(~{${arguments.getMenuItem().getIcon()}})"></svg>
+            </div>
+
+            <th:block
+                th:text="${arguments.getMenuItem().isTranslated() ? #messages.msg(arguments.getMenuItem().getTitle()) : arguments.getMenuItem().getTitle()}"
+            ></th:block>
+        </a>
+        <!-- end::desktopButton[] -->
+    </div>
+    <!-- end::desktop[] -->
+</th:block>

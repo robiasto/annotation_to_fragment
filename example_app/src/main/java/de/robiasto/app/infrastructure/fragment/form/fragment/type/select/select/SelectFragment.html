@@ -1,0 +1,25 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.form.fragment.type.select.select.SelectFragment" */-->
+<div xmlns:th="http://www.thymeleaf.org">
+    <select
+        th:classappend="${arguments.cssClassesToAdd}"
+        th:multiple="${arguments.multiple}"
+        th:fragment="SelectFragment(arguments)"
+        th:form-field="select"
+        th:name="${arguments.name}"
+        th:required="${arguments.mandatory}"
+        th:data-searchable="${arguments.searchable}"
+        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 disabled:border-0 disabled:shadow-none sm:text-sm"
+    >
+        <option
+            data-placeholder="true"
+            th:if="${arguments.placeholder}"
+            th:data-placeholder-text="#{'select.placeholder'}"
+        ></option>
+        <option
+            th:each="option : ${arguments.options}"
+            th:selected="${option.isSelected()}"
+            th:text="${(option.isTranslatable() ? #messages.msg(option.getName()) : option.getName())}"
+            th:value="${option.getValue()}"
+        ></option>
+    </select>
+</div>

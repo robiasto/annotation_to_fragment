@@ -1,0 +1,32 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.user.login.fragment.page.LoginView" */-->
+<!doctype html>
+<html
+    lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:af="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login</title>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <link rel="stylesheet" th:href="@{/css/app.css}" />
+    </head>
+    <body>
+        <div class="flex min-h-screen flex-col justify-center py-12 sm:px-6 lg:px-8">
+            <div class="sm:mx-auto sm:w-full sm:max-w-md">
+                <div class="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+                    <div class="mb-6 sm:mx-auto sm:w-full sm:max-w-md">
+                        <img alt="Application Logo" class="mx-auto h-12 w-auto" th:src="@{/svg/application-logo.svg}" />
+                    </div>
+                    <th:block th:if="${alert}">
+                        <th:block af:value="${alert}"></th:block>
+                    </th:block>
+                    <th:block af:value="${form}"></th:block>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

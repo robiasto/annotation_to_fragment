@@ -1,0 +1,41 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.link.confirmation.ConfirmationFragment"*/-->
+<th:block xmlns:af="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <div
+        @click.outside="cancel"
+        @keydown.window.escape="cancel"
+        th:fragment="ConfirmationFragment(arguments)"
+        x-data="confirmation()"
+        class="relative"
+    >
+        <div @click="confirm" @submit="confirm">
+            <th:block af:value="${arguments.getFragment()}"></th:block>
+        </div>
+
+        <dialog class="table max-h-0 max-w-0 overflow-visible" x-show="isConfirmation()">
+            <div class="w-20">
+                <button
+                    @click="cancel"
+                    class="inline-flex size-6 items-center border border-red-700 bg-white p-1 text-red-700 delay-150 duration-300 ease-in-out hover:bg-red-700 hover:text-white hover:drop-shadow-lg"
+                >
+                    <svg class="size-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                        />
+                    </svg>
+                </button>
+                <button
+                    @click="confirmed"
+                    class="inline-flex size-6 items-center border border-green-700 bg-white p-1 text-green-700 delay-150 duration-300 ease-in-out hover:bg-green-700 hover:text-white hover:drop-shadow-lg"
+                >
+                    <svg class="size-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            clip-rule="evenodd"
+                            d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                            fill-rule="evenodd"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </dialog>
+    </div>
+</th:block>

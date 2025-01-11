@@ -1,0 +1,16 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.configuration.GridColFragment" */-->
+<!doctype html>
+<th:block
+    xmlns="http://www.w3.org/1999/html"
+    xmlns:af="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+>
+    <div th:classappend="${arguments.getCssClassesToAdd()}" th:fragment="GridColFragment(arguments)" class="xl:m-4">
+        <th:block af:value="${arguments.getFragment()}"></th:block>
+    </div>
+
+    <!-- added tailwind css classes in type-->
+    <div
+        class="mb-4 text-end max-xl:px-10 max-xl:py-5 sm:col-span-1 sm:col-span-2 sm:col-span-3 sm:col-span-4 sm:col-span-5 sm:col-span-6 sm:col-start-1 sm:col-start-2 sm:col-start-3 sm:col-start-4 sm:col-start-5 sm:col-start-6"
+    ></div>
+</th:block>

@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div
+        th:data-test-fragment="addCssType"
+        th:fragment="mandatoryAnnotationTypeFragment(arguments)"
+>
+    <div id="content" th:text="${arguments.getContent()}"></div>
+    <div id="annotation-content" th:text="${arguments.getMandatoryText()}"></div>
+</div>
+</html>

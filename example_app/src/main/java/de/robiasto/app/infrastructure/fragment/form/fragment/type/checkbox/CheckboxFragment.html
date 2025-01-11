@@ -1,0 +1,14 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.form.fragment.type.input.InputFragment" */-->
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <input
+        class="block cursor-pointer rounded-md border-gray-300 text-green-500 shadow-sm focus:border-green-500 focus:ring-0 focus:ring-green-500 disabled:border-0 disabled:shadow-none sm:text-sm"
+        th:classappend="${arguments.getCssClassesToAdd()}"
+        th:form-field="checkbox"
+        th:fragment="CheckboxFragment(arguments)"
+        th:name="${arguments.name}"
+        th:required="${arguments.mandatory}"
+        th:type="checkbox"
+        th:checked="${arguments.value}"
+        th:value="true"
+    />
+</th:block>

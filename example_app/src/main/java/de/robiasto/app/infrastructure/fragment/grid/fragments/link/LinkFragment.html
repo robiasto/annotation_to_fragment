@@ -1,0 +1,50 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.link.LinkFragment"*/-->
+<!doctype html>
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <!-- type::link -->
+    <th:block th:fragment="linkType(arguments)">
+        <a
+            class="underline hover:text-gray-800 hover:decoration-2"
+            th:classappend="${arguments.getCssClassesToAdd()}"
+            th:href="@{${arguments.getUrl()}} "
+            th:text="${arguments.getText() != '' ? arguments.getText() : #messages.msg(arguments.getTranslation())}"
+        ></a>
+    </th:block>
+
+    <!-- type::button -->
+    <th:block th:fragment="buttonType(arguments)">
+        <a
+            class="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 [&:not(:last-child)]:mr-2"
+            th:classappend="${arguments.getCssClassesToAdd()}"
+            th:href="@{${arguments.getUrl()}} "
+            th:text="${arguments.getText() != '' ? arguments.getText() : #messages.msg(arguments.getTranslation())}"
+        ></a>
+    </th:block>
+
+    <!-- type::submit -->
+    <th:block th:fragment="submitType(arguments)">
+        <button
+            class="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 [&:not(:last-child)]:mr-2"
+            th:classappend="${arguments.getCssClassesToAdd()}"
+            th:text="${arguments.getText() != '' ? arguments.getText() : #messages.msg(arguments.getTranslation())}"
+            type="submit"
+        ></button>
+    </th:block>
+
+    <!-- type::form -->
+    <th:block th:fragment="formType(arguments)">
+        <form
+            enctype="multipart/form-data"
+            method="post"
+            th:action="@{${arguments.getUrl()}}"
+            th:classappend="${arguments.getCssClassesToAdd()}"
+        >
+            <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden" />
+            <button
+                class="underline hover:text-gray-800 hover:decoration-2"
+                th:text="${arguments.getText() != '' ? arguments.getText() : #messages.msg(arguments.getTranslation())}"
+                type="submit"
+            ></button>
+        </form>
+    </th:block>
+</th:block>

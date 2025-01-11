@@ -1,0 +1,7 @@
+.alert-success {
+  @apply bg-green-50 text-green-800;
+}
+
+.alert-error {
+  @apply bg-red-50 text-red-800;
+}

@@ -1,0 +1,12 @@
+<!--/* @thymesVar id="arguments" type="io.github.robiasto.annotations_to_fragments_processor.fragments.basic.Plain"*/-->
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div
+        th:class="type"
+        th:classappend="${arguments.getCssClassesToAdd()}"
+        th:data-test-fragment="addCssType"
+        th:fragment="addCssType(arguments)"
+        th:text="${arguments.getContent()}"
+>
+</div>
+</html>

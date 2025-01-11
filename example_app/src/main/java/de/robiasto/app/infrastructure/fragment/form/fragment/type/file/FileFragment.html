@@ -1,0 +1,28 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.form.fragment.type.file.FileFragment" */-->
+<!doctype html>
+<div lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="FileFragment(arguments)">
+
+        <th:block af:value="${arguments.image}"></th:block>
+
+        <input
+                th:id="${arguments.name + 'Input'}"
+                th:@change="'updateDsipalyedImg(\'' + ${arguments.name} + 'Img\')'"
+                x-data="imageButton"
+                th:name="${arguments.name}"
+                th:required="${arguments.mandatory}"
+                th:type="file"
+                th:value="${arguments.value}"
+                th:accept="${arguments.fileType}"
+                class="hidden"
+        >
+        <button id="selectAvatarButton"
+                type="button"
+                class="on-disable-hide ml-4 py-2 px-3 border border-gray-300 rounded-md text-sm leading-4 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
+                th:text="#{image.add}"
+                th:@click="'addImage(\'' + ${arguments.name} + 'Input\')'"
+                x-data="imageButton"
+        >Add picture
+        </button>
+    </th:block>
+</div>

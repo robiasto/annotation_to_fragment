@@ -1,0 +1,7 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.image_text.ImageTextFragmentList" */-->
+<div xmlns:th="http://www.thymeleaf.org" xmlns:af="http://www.w3.org/1999/xhtml">
+    <th:block th:fragment="ImageTextFragmentList(arguments)" th:each="imageTextValue : ${arguments.imageTextValues}">
+        <th:block af:value="${imageTextValue}"></th:block>
+        </th:block>
+    </th:block>
+</div>

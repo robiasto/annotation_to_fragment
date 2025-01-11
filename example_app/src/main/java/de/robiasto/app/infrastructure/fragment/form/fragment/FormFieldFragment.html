@@ -1,0 +1,23 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.form.form_field.FormFieldFragment" */-->
+<!-- sonar-ignore Web:S6853 -->
+<th:block xmlns:af="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <div
+        @change="validate"
+        @keyup="validate"
+        th:classappend="${arguments.getCssClassesToAdd()}"
+        th:fragment="FormFieldFragment(arguments)"
+    >
+        <label
+            class="mb-1 block text-sm font-medium text-gray-700"
+            th:for="${arguments.getName()}"
+            th:if="${arguments.isDisplayLabel()}"
+            th:text="${(arguments.isTranslated() && arguments.getLabel() != '' ? #messages.msg(arguments.getLabel()) : arguments.getLabel()) + (arguments.isMandatory() ?'* ' : '')}"
+        ></label>
+        <th:block af:value="${arguments.getField()}"></th:block>
+        <div class="validation-errors text-xs italic text-red-500"></div>
+    </div>
+
+    <!-- added tailwind css classes -->
+    <div class="sm:col-span-3 sm:grid-cols-6"></div>
+</th:block>
+<!-- sonar-ignore-end -->

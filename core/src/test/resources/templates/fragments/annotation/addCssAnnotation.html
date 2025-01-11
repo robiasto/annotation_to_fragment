@@ -1,0 +1,12 @@
+<!--/* @thymesVar id="arguments" type="io.github.robiasto.annotations_to_fragments_processor.fragments.composition.View"*/-->
+<!DOCTYPE HTML>
+<html lang="en" xmlns:af="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div
+        th:class="annotation"
+        th:classappend="${arguments.getCssClassesToAdd()}"
+        th:data-test-fragment="addCssAnnotation"
+        th:fragment="addCssAnnotation(arguments)"
+>
+    <div af:value="${arguments.getViewFragment()}"></div>
+</div>
+</html>

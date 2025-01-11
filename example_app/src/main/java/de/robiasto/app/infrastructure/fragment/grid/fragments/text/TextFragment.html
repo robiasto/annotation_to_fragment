@@ -1,0 +1,11 @@
+<!--/* @thymesVar id="arguments" type="io.github.robiasto.basic_fragment_configuration.type.text.TextFree"*/-->
+<!doctype html>
+<th:block xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <p
+        th:classappend="${arguments.getCssClassesToAdd()}"
+        th:fragment="TEXT_PARAGRAPH_FRAGMENT(arguments)"
+        th:text="${arguments.getText()}"
+    ></p>
+
+    <th:block th:fragment="TEXT_FREE_FRAGMENT(arguments)" th:text="${arguments.getText()}"></th:block>
+</th:block>

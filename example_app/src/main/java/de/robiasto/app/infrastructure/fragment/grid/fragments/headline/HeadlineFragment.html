@@ -1,0 +1,9 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.headline.HeadlineFragment"*/-->
+<!DOCTYPE HTML>
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="HeadlineFragment(arguments)">
+        <[[${arguments.getType()}]] class="[[${arguments.getCssClassesToAdd()}]]" >[[${arguments.getContent()}]]
+    </[[${arguments.getType()}]]>
+</th:block>
+<div class="mb-4 font-bold font-medium font-light ext-1xl text-2xl text-3xl text-4xl text-5xl text-6xl text-7xl text-8xl text-9xl text-10xl border-b-[1px] border-line-[1px] pb-1"></div>
+</th:block>

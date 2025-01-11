@@ -1,0 +1,26 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.templates.fragments.composition.form.field.type.select.RadioGroupFragment" */-->
+<!-- sonar-ignore Web:S6853 -->
+<!DOCTYPE HTML>
+<th:block xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<th:block
+        th:each="option: ${arguments.getOptions()}"
+        th:fragment="RadioGroupFragment(arguments)"
+>
+    <input
+            class="mr-1 focus:ring-green-500 h-4 w-4 text-green-300 border-gray-300 ml-4 disabled:ring-0 disabled:text-green-300 "
+            th:checked="${option.isSelected()}"
+            th:form-field="radio"
+            th:id="${option.getValue + '-' + option.getName()}"
+            th:name="${option.getValue()}"
+            th:required="${arguments.isMandatory()}"
+            th:value="${option.getName()}"
+            type="radio"
+    >
+    <label
+            class="text-sm font-medium text-gray-700"
+            th:for="${option.getValue + '-' + option.getName()}"
+            th:text="#{${option.getValue() + '.' + option.getName()}}"
+    >
+    </label>
+</th:block>
+</th:block>

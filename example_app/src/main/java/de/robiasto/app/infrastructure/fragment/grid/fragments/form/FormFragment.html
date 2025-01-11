@@ -1,0 +1,46 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.templates.fragments.composition.form.FormFragment" */-->
+<!doctype html>
+<th:block
+    xmlns="http://www.w3.org/1999/html"
+    xmlns:af="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+>
+    <th:block th:fragment="FormFragment(arguments)">
+        <th:block th:if="${arguments.isEditable()}">
+            <form
+                @submit.prevent="validateFieldsAndSubmit"
+                class="mt-6 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-6"
+                method="post"
+                th:action="${arguments.getAction()}"
+                th:classappend="${arguments.getCssClassesToAdd()}"
+                th:x-data="'validationFields(\'' + ${arguments.getAction()} + '/validate' + '\',$el)'"
+                enctype="multipart/form-data"
+            >
+                <th:block af:value="${arguments.getFormFields()}"></th:block>
+
+                <div class="pt-5 sm:col-span-6">
+                    <div class="flex justify-end">
+                        <th:block th:if="${arguments.getCancelLink() != null}">
+                            <th:block af:value="${arguments.getCancelLink()}"></th:block>
+                        </th:block>
+                        <th:block af:value="${arguments.getActionLink()}"></th:block>
+                    </div>
+                </div>
+            </form>
+        </th:block>
+
+        <th:block th:if="${!arguments.isEditable()}">
+            <div class="mt-6 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-6" th:disable-fields="true">
+                <th:block af:value="${arguments.getFormFields()}"></th:block>
+
+                <div class="pt-5 sm:col-span-6">
+                    <div class="flex justify-end">
+                        <th:block th:if="${arguments.getCancelLink() != null}">
+                            <th:block af:value="${arguments.getCancelLink()}"></th:block>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+    </th:block>
+</th:block>

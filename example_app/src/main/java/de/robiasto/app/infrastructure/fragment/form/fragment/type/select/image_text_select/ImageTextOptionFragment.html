@@ -1,0 +1,49 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.form.fragment.type.select.image_text_select.ImageTextOptionFragment" */-->
+<div xmlns:th="http://www.thymeleaf.org" xmlns:af="http://www.w3.org/1999/xhtml">
+    <th:block th:fragment="ImageTextOptionFragment(arguments)">
+        <div
+            class="option-item group m-1 mt-0 bg-white first:mt-1"
+            th:classappend="${arguments.selected && arguments.multiple ? '' : 'hidden'}"
+            th:id="${'option-' +  arguments.name + '-' + optionContent.value}"
+        >
+            <div class="flex min-h-full min-w-full flex-row">
+                <th:block af:value="${arguments.imageTextFragment}"></th:block>
+
+                <div class="remove-container flex-box flex hidden basis-2/12">
+                    <div class="basis-6/12" th:if="${!arguments.isAdmin}"></div>
+
+                    <!-- edit -->
+                    <div class="flex-box flex min-h-full basis-6/12 flex-row">
+                        <div
+                            class="basis-full overflow-hidden text-red-500 duration-300 ease-in-out group-hover:basis-0 group-hover:opacity-0"
+                        ></div>
+                        <div
+                            class="flex basis-0 flex-row overflow-hidden duration-300 ease-in-out group-hover:basis-full"
+                        >
+                            <a
+                                class="inline-flex basis-full items-center justify-center border-2 border-green-500 bg-green-500 text-xs text-white hover:bg-green-300 hover:text-green-700"
+                                th:href="${arguments.detailLink}"
+                                th:text="${#messages.msg(arguments.isAdmin ? 'select.option.edit' : 'select.option.detail')}"
+                            >
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- remove -->
+                    <div class="flex-box order-last flex min-h-full basis-6/12 flex-row" th:if="${arguments.isAdmin}">
+                        <div
+                            class="relative basis-full overflow-hidden text-red-500 duration-300 ease-in-out group-hover:basis-0 group-hover:opacity-0"
+                        ></div>
+                        <button
+                            class="peer basis-0 overflow-hidden border-0 border-red-500 bg-red-500 text-xs text-white duration-300 ease-in-out hover:bg-red-300 hover:text-red-700 group-hover:basis-full group-hover:border-2"
+                            type="button"
+                            data-click-listener="remove-selected"
+                            th:data-remove-selected="${arguments.value}"
+                            th:text="#{select.option.deselect}"
+                        ></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+</div>

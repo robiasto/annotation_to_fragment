@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:af="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div
+        class="with-headline"
+        th:data-test-fragment="withHeadlineFragment"
+        th:fragment="withHeadlineFragment(arguments)"
+>
+    <h1 th:text="${arguments.getHeadlineText()}"></h1>
+    <div af:value="${arguments.getFragment()}" class="fragment"></div>
+</div>
+</html>

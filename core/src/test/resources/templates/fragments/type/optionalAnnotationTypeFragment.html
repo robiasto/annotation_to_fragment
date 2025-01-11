@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div
+        th:data-test-fragment="optionalAnnotationTypeFragment"
+        th:fragment="optionalAnnotationTypeFragment(arguments)"
+>
+    <div class="attribute" th:text="${arguments.getContent()}"></div>
+    <div class="annotation" th:text="${arguments.getOptionalText()}"></div>
+</div>
+</html>

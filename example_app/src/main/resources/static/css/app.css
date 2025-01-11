@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "fragments/alert.css";
+@import "fragments/select.css";
+
+@layer utilities {
+  [x-cloak] {
+    display: none;
+  }
+}
+
+@config "../../../../../tailwind.config.js";

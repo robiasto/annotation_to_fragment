@@ -1,0 +1,14 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.form.fragment.type.input.InputFragment" */-->
+<!doctype html>
+<th:block xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+    <input
+        class="block w-full border-0 border-b-[1px] border-gray-300 shadow-none focus:border-0 focus:border-b-[1px] focus:border-green-500 focus:shadow-none focus:ring-0 sm:text-sm"
+        th:classappend="${arguments.getCssClassesToAdd()}"
+        th:form-field="${arguments.getType()}"
+        th:fragment="InputFragment(arguments)"
+        th:name="${arguments.getName()}"
+        th:required="${arguments.isMandatory()}"
+        th:type="${arguments.getType()}"
+        th:value="${arguments.getValue()}"
+    />
+</th:block>

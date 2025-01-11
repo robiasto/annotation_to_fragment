@@ -1,0 +1,25 @@
+<!--/* @thymesVar id="arguments" type="de.robiasto.app.infrastructure.fragment.grid.fragments.image_text.ImageTextFragment" */-->
+<div xmlns:th="http://www.thymeleaf.org">
+    <div
+        th:fragment="ImageTextFragment(arguments)"
+        class="flex flex-row"
+        th:classappend="${arguments.isListElement ? 'basis-10/12' : ''}"
+    >
+        <div class="basis-auto/12 p-2">
+            <div th:class="${arguments.image == '' ? 'hidden' : ''}">
+                <th:block af:value="${arguments.image}"></th:block>
+            </div>
+        </div>
+        <div class="basis-auto text-nowrap p-2 text-left">
+            <div class="text-sm text-gray-700">
+                <th:block th:text="${arguments.title}"></th:block>
+            </div>
+            <th:block th:each="textList : ${arguments.textList}">
+                <div class="text-xs text-gray-500">
+                    <th:block th:text="${#messages.msg(textList.label)}"></th:block>
+                    <span th:text="${textList.text}"></span>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</div>
