@@ -2,7 +2,7 @@ package de.robiasto.app.user.detail.utility.converter;
 
 
 import de.robiasto.app.user.detail.domain.UserEntity;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.convert.converter.Converter;

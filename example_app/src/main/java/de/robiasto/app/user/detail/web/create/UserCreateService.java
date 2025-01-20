@@ -2,7 +2,7 @@ package de.robiasto.app.user.detail.web.create;
 
 import de.robiasto.app.user.detail.domain.UserEntity;
 import de.robiasto.app.user.detail.domain.UserRepository;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

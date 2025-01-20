@@ -1,8 +1,8 @@
 package de.robiasto.app.member;
 
-import de.robiasto.app.team.infrastructure.TeamId;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.team.domain.TeamId;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserId;
 
 public record MemberDto(UserId userId, TeamId teamId, Position position, boolean coach) {
     public MemberDto(TeamId teamId, MemberDto memberDto) {

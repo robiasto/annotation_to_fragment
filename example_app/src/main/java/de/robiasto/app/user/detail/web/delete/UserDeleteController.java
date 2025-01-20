@@ -1,10 +1,10 @@
 package de.robiasto.app.user.detail.web.delete;
 
-import de.robiasto.app.infrastructure.fragment.page.redirect_page.RedirectModelAndView;
+import de.robiasto.app.infrastructure.fragment.factory.page.redirect_page.RedirectModelAndView;
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
-import de.robiasto.app.infrastructure.utility.security.Security;
+import de.robiasto.app.infrastructure.utility.entity_helper.Security;
 import de.robiasto.app.user.detail.domain.UserEntity;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;

@@ -6,7 +6,7 @@ import de.robiasto.app.infrastructure.fragment.form.FormFieldFragmentTypes;
 import de.robiasto.app.infrastructure.fragment.form.ImageTextSelectValueDto;
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
 import de.robiasto.app.team.detail.domain.TeamEntity;
-import de.robiasto.app.team.domain.TeamMemberEntity;
+import de.robiasto.app.team.detail.domain.TeamMemberEntity;
 import de.robiasto.fragment_annotation_core.interfaces.AnnotationViewInterface;
 import lombok.Getter;
 

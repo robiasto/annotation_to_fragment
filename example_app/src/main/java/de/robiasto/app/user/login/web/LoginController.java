@@ -2,7 +2,7 @@ package de.robiasto.app.user.login.web;
 
 import de.robiasto.app.infrastructure.fragment.plain.alert.AlertFragment;
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import de.robiasto.app.user.login.fragment.LoginView;
 import de.robiasto.app.user.login.infrastructure.SecurityRoute;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

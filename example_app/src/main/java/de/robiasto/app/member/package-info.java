@@ -1,8 +1,8 @@
 @ApplicationModule(
         displayName = "Member",
         allowedDependencies = {
-                "de.robiasto.app.team.infrastructure",
-                "de.robiasto.app.user.infrastructure",
+                "de.robiasto.app.team.domain",
+                "de.robiasto.app.user.domain",
         }
 )
 package de.robiasto.app.member;

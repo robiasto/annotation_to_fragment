@@ -1,5 +1,5 @@
 @ApplicationModule(
-        displayName = "Pagination fragment",
+        displayName = "Fragment: Pagination",
         allowedDependencies = {}
 )
 package de.robiasto.app.infrastructure.fragment.plain.pagination;

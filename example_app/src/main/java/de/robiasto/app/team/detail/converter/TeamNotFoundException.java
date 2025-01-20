@@ -1,6 +1,6 @@
 package de.robiasto.app.team.detail.converter;
 
-import de.robiasto.app.team.infrastructure.TeamId;
+import de.robiasto.app.team.domain.TeamId;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

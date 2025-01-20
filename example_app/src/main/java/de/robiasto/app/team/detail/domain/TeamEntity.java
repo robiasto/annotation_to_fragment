@@ -1,6 +1,6 @@
 package de.robiasto.app.team.detail.domain;
 
-import de.robiasto.app.team.infrastructure.TeamId;
+import de.robiasto.app.team.domain.TeamId;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

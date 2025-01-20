@@ -1,9 +1,9 @@
 package de.robiasto.app.member.domain;
 
 import de.robiasto.app.member.MemberId;
-import de.robiasto.app.team.infrastructure.TeamId;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.team.domain.TeamId;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserId;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

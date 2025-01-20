@@ -1,9 +1,9 @@
 package de.robiasto.app.member.domain;
 
 import de.robiasto.app.member.MemberId;
-import de.robiasto.app.team.infrastructure.TeamId;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.team.domain.TeamId;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserId;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

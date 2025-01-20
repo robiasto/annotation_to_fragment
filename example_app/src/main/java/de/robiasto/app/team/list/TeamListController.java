@@ -2,9 +2,9 @@ package de.robiasto.app.team.list;
 
 import de.robiasto.app.infrastructure.advice.menu.MainMenuItem;
 import de.robiasto.app.infrastructure.advice.menu.MainMenuItemCollector;
-import de.robiasto.app.infrastructure.fragment.view.list.ListView;
+import de.robiasto.app.infrastructure.fragment.factory.view.list.ListView;
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
-import de.robiasto.app.team.infrastructure.TeamId;
+import de.robiasto.app.team.domain.TeamId;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

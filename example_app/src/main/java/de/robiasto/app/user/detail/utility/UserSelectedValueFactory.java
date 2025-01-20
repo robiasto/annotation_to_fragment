@@ -2,8 +2,8 @@ package de.robiasto.app.user.detail.utility;
 
 import de.robiasto.app.infrastructure.fragment.form.SelectValueDto;
 import de.robiasto.app.user.domain.Gender;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserRole;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserRole;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,6 +1,6 @@
 package de.robiasto.app.user.detail.utility;
 
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

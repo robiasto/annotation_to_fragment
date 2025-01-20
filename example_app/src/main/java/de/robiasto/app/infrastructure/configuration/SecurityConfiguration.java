@@ -1,7 +1,7 @@
 package de.robiasto.app.infrastructure.configuration;
 
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import de.robiasto.app.user.login.SecurityUserService;
 import de.robiasto.app.user.login.infrastructure.SecurityRoute;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;

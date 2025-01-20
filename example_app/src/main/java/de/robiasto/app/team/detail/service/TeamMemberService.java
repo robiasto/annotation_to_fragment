@@ -1,13 +1,14 @@
 package de.robiasto.app.team.detail.service;
 
-import de.robiasto.app.infrastructure.utility.entity_manager_utility.EntityManagerUtility;
+import de.robiasto.app.infrastructure.utility.entity_helper.EntityQueryUtilityInterface;
+import de.robiasto.app.infrastructure.utility.entity_helper.EntityQueryAttribute;
 import de.robiasto.app.member.MemberDto;
 import de.robiasto.app.member.TeamMemberServiceInterface;
 import de.robiasto.app.team.detail.domain.TeamEntity;
 import de.robiasto.app.team.detail.domain.TeamUserEntity;
-import de.robiasto.app.team.domain.TeamMemberEntity;
-import de.robiasto.app.team.infrastructure.TeamId;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.team.detail.domain.TeamMemberEntity;
+import de.robiasto.app.team.domain.TeamId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class TeamMemberService {
 
-    private EntityManagerUtility entityManager;
+    private EntityQueryUtilityInterface entityManager;
 
     private final TeamMemberServiceInterface memberService;
 
@@ -27,7 +28,7 @@ public class TeamMemberService {
         return this.entityManager.executeQuery(
                 "Team.findAllPlayers",
                 TeamMemberEntity.class,
-                new EntityManagerUtility.Param("teamId", team.id)
+                new EntityQueryAttribute("teamId", team.id)
         );
     }
 
@@ -35,7 +36,7 @@ public class TeamMemberService {
         return this.entityManager.executeQuery(
                 "Team.findAllCoaches",
                 TeamMemberEntity.class,
-                new EntityManagerUtility.Param("teamId", team.id)
+                new EntityQueryAttribute("teamId", team.id)
         );
     }
 
@@ -56,7 +57,7 @@ public class TeamMemberService {
         return entityManager.executeQuery(
                                     "TeamUserEntity.byUserId",
                                     TeamUserEntity.class,
-                                    new EntityManagerUtility.Param("userId", userId.id)
+                                    new EntityQueryAttribute("userId", userId.id)
                             ).stream()
                             .findFirst()
                             .orElseThrow()

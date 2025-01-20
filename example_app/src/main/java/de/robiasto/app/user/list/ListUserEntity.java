@@ -1,7 +1,7 @@
 package de.robiasto.app.user.list;
 
 import de.robiasto.app.user.domain.Gender;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

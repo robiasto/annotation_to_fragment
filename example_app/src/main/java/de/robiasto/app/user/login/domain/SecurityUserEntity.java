@@ -1,7 +1,7 @@
 package de.robiasto.app.user.login.domain;
 
-import de.robiasto.app.user.infrastructure.UserId;
-import de.robiasto.app.user.infrastructure.UserRole;
+import de.robiasto.app.user.domain.UserId;
+import de.robiasto.app.user.domain.UserRole;
 import de.robiasto.app.user.login.SecurityUserInterface;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

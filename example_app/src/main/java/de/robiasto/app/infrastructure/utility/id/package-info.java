@@ -1,5 +1,5 @@
 @ApplicationModule(
-        displayName = "Id utility",
+        displayName = "Utility: Id abstraction",
         allowedDependencies = {}
 )
 package de.robiasto.app.infrastructure.utility.id;

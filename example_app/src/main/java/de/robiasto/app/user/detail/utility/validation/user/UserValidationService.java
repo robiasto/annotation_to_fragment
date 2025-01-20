@@ -2,7 +2,7 @@ package de.robiasto.app.user.detail.utility.validation.user;
 
 import de.robiasto.app.user.detail.domain.UserEntity;
 import de.robiasto.app.user.detail.domain.UserRepository;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 

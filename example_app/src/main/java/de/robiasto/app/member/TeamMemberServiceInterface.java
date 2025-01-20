@@ -1,7 +1,7 @@
 package de.robiasto.app.member;
 
-import de.robiasto.app.team.infrastructure.TeamId;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.team.domain.TeamId;
+import de.robiasto.app.user.domain.UserId;
 
 import java.util.List;
 

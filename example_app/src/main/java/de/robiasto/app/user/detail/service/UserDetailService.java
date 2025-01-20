@@ -2,12 +2,8 @@ package de.robiasto.app.user.detail.service;
 
 import de.robiasto.app.infrastructure.fragment.form.SelectValueDto;
 import de.robiasto.app.infrastructure.fragment.grid.fragments.image_text.ImageTextValueDto;
-import de.robiasto.app.member.MemberDto;
-import de.robiasto.app.member.TeamMemberServiceInterface;
-import de.robiasto.app.team.infrastructure.TeamId;
 import de.robiasto.app.user.detail.domain.UserTeamRepository;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +14,6 @@ import java.util.List;
 public class UserDetailService {
 
     private final UserTeamRepository userTeamRepository;
-
-    private final TeamMemberServiceInterface memberService;
-
 
     public List<ImageTextValueDto> getCareerList(UserId userId) {
         return userTeamRepository.findAllUserTeamCareer(userId);
@@ -40,16 +33,5 @@ public class UserDetailService {
 
     public List<SelectValueDto> getSelectableTeamCoaches() {
         return userTeamRepository.findAllTeamsCoaches();
-    }
-
-    public void updateTeam(TeamId teamId, UserId userId, Position position, boolean coach) {
-        MemberDto member = new MemberDto(userId, teamId, position, coach);
-        if (coach) {
-            memberService.updateCoach(member);
-
-            return;
-        }
-
-        memberService.updatePlayer(member);
     }
 }

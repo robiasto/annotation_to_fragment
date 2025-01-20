@@ -1,9 +1,9 @@
 package de.robiasto.app.team.detail.domain;
 
 import de.robiasto.app.member.MemberDto;
-import de.robiasto.app.team.infrastructure.TeamId;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.team.domain.TeamId;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserId;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;

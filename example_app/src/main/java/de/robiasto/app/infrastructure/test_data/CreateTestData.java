@@ -1,15 +1,15 @@
 package de.robiasto.app.infrastructure.test_data;
 
 import com.github.javafaker.Faker;
-import de.robiasto.app.infrastructure.utility.file.FileUtility;
+import de.robiasto.app.infrastructure.utility.entity_helper.FileUtilityInterface;
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
 import de.robiasto.app.team.detail.domain.TeamEntity;
-import de.robiasto.app.team.infrastructure.TeamId;
+import de.robiasto.app.team.domain.TeamId;
 import de.robiasto.app.user.detail.domain.UserEntity;
 import de.robiasto.app.user.domain.Gender;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserId;
-import de.robiasto.app.user.infrastructure.UserRole;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserId;
+import de.robiasto.app.user.domain.UserRole;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
@@ -35,7 +35,7 @@ class CreateTestData implements CommandLineRunner {
     private final CreateTestDataService userService;
     private final PasswordEncoder passwordEncoder;
     private final ResourceLoader resourceLoader;
-    private final FileUtility fileUtility;
+    private final FileUtilityInterface fileUtility;
 
     private final Random random = new SecureRandom();
 

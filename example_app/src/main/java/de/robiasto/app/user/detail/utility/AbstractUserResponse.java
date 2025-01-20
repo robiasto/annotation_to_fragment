@@ -1,9 +1,9 @@
 package de.robiasto.app.user.detail.utility;
 
-import de.robiasto.app.team.infrastructure.TeamId;
+import de.robiasto.app.team.domain.TeamId;
 import de.robiasto.app.user.domain.Gender;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserRole;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserRole;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;

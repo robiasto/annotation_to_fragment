@@ -1,6 +1,8 @@
 @ApplicationModule(
         displayName = "User domain",
-        allowedDependencies = {}
+        allowedDependencies = {
+                "de.robiasto.app.infrastructure.utility.id"
+        }
 )
 package de.robiasto.app.user.domain;
 

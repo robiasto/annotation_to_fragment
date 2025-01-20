@@ -1,7 +1,7 @@
 package de.robiasto.app.user.detail.domain.team;
 
 import de.robiasto.app.infrastructure.fragment.form.SelectValueDto;
-import de.robiasto.app.team.infrastructure.TeamId;
+import de.robiasto.app.team.domain.TeamId;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

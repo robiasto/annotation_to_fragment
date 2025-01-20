@@ -1,13 +1,13 @@
 package de.robiasto.app.user.detail.web.update;
 
-import de.robiasto.app.infrastructure.fragment.page.redirect_page.RedirectModelAndView;
-import de.robiasto.app.infrastructure.fragment.view.form.FormView;
+import de.robiasto.app.infrastructure.fragment.factory.page.redirect_page.RedirectModelAndView;
+import de.robiasto.app.infrastructure.fragment.factory.view.form.FormView;
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
-import de.robiasto.app.infrastructure.utility.security.Security;
+import de.robiasto.app.infrastructure.utility.entity_helper.Security;
 import de.robiasto.app.infrastructure.utility.validation.AbstractValidationController;
 import de.robiasto.app.user.detail.domain.UserEntity;
 import de.robiasto.app.user.detail.service.UserDetailService;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -63,12 +63,7 @@ class UserUpdateController extends AbstractValidationController<UserUpdateRespon
     ) {
         if (!bindingResult.hasErrors()) {
             userService.update(user, userUpdateResponse);
-            teamDetailService.updateTeam(
-                    userUpdateResponse.getTeamId(),
-                    user.getId(),
-                    userUpdateResponse.getPosition(),
-                    userUpdateResponse.isCoach()
-            );
+
 
             this.redirectModelAndView.setAlertSuccess(
                     redirectAttributes,

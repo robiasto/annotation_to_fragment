@@ -1,13 +1,13 @@
 package de.robiasto.app.user.detail.web.create;
 
-import de.robiasto.app.infrastructure.fragment.page.redirect_page.RedirectModelAndView;
-import de.robiasto.app.infrastructure.fragment.view.form.FormView;
-import de.robiasto.app.infrastructure.utility.file.FileUtility;
+import de.robiasto.app.infrastructure.fragment.factory.page.redirect_page.RedirectModelAndView;
+import de.robiasto.app.infrastructure.fragment.factory.view.form.FormView;
+import de.robiasto.app.infrastructure.utility.entity_helper.FileUtilityInterface;
 import de.robiasto.app.infrastructure.utility.id.RouteConfiguration;
 import de.robiasto.app.infrastructure.utility.validation.AbstractValidationController;
 import de.robiasto.app.user.detail.domain.UserEntity;
 import de.robiasto.app.user.detail.service.UserDetailService;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -32,7 +32,7 @@ class UserCreateController extends AbstractValidationController<UserCreateRespon
 
     private final UserDetailService userDetailService;
 
-    private final FileUtility fileUtility;
+    private final FileUtilityInterface fileUtility;
 
     private static final String LIST_ROUTE = RouteConfiguration.getList(new UserId());
 

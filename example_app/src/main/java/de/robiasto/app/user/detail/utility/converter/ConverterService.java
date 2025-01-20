@@ -3,7 +3,7 @@ package de.robiasto.app.user.detail.utility.converter;
 import de.robiasto.app.user.detail.domain.UserEntity;
 import de.robiasto.app.user.detail.domain.UserRepository;
 import de.robiasto.app.user.detail.utility.UserNotFoundException;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

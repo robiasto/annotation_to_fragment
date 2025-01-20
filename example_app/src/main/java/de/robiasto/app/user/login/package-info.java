@@ -1,7 +1,7 @@
 @ApplicationModule(
         displayName = "User Login",
         allowedDependencies = {
-                "de.robiasto.app.user.infrastructure",
+                "de.robiasto.app.user.domain",
                 "de.robiasto.app.infrastructure.fragment.plain.alert",
                 "de.robiasto.app.infrastructure.fragment.grid",
                 "de.robiasto.app.infrastructure.fragment.grid :: form",

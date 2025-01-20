@@ -1,5 +1,5 @@
 @ApplicationModule(
-        displayName = "Grid fragments",
+        displayName = "Fragment: Grid annotation",
         allowedDependencies = {
                 "de.robiasto.app.infrastructure.fragment.plain.pagination",
         }

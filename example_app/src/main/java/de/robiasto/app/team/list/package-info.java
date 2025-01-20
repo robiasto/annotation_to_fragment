@@ -2,8 +2,8 @@
         displayName = "Team list",
         allowedDependencies = {
                 "de.robiasto.app.infrastructure.utility.id",
-                "de.robiasto.app.team.infrastructure",
-                "de.robiasto.app.infrastructure.fragment.view.list",
+                "de.robiasto.app.team.domain",
+                "de.robiasto.app.infrastructure.fragment.factory.view.list",
                 "de.robiasto.app.infrastructure.advice.menu",
                 "de.robiasto.app.infrastructure.fragment.grid",
         }

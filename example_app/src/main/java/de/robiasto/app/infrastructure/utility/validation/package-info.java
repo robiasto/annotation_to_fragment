@@ -1,5 +1,5 @@
 @ApplicationModule(
-        displayName = "Validation Controller utility",
+        displayName = "Utility: Validation Controller",
         allowedDependencies = {}
 )
 package de.robiasto.app.infrastructure.utility.validation;

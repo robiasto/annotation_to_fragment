@@ -1,5 +1,5 @@
 @ApplicationModule(
-        displayName = "Alert fragments",
+        displayName = "Fragment: Alert",
         allowedDependencies = {}
 )
 package de.robiasto.app.infrastructure.fragment.plain.alert;

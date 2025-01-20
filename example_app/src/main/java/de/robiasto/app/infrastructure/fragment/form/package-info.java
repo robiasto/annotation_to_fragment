@@ -1,5 +1,5 @@
 @ApplicationModule(
-        displayName = "Form fragments",
+        displayName = "Fragment: Form annotation",
         allowedDependencies = {
                 "de.robiasto.app.infrastructure.fragment.grid :: image",
                 "de.robiasto.app.infrastructure.fragment.grid :: image_text",

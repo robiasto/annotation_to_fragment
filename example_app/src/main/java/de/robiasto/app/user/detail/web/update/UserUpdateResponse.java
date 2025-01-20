@@ -3,7 +3,7 @@ package de.robiasto.app.user.detail.web.update;
 import de.robiasto.app.user.detail.utility.AbstractUserResponse;
 import de.robiasto.app.user.detail.utility.validation.user.ExistingUserValidationInterface;
 import de.robiasto.app.user.detail.utility.validation.user.UserValidation;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 import lombok.Setter;
 
 import java.util.UUID;

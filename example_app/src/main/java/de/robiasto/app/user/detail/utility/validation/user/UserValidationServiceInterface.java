@@ -1,7 +1,7 @@
 package de.robiasto.app.user.detail.utility.validation.user;
 
 import de.robiasto.app.user.detail.domain.UserEntity;
-import de.robiasto.app.user.infrastructure.UserId;
+import de.robiasto.app.user.domain.UserId;
 
 interface UserValidationServiceInterface {
 

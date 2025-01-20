@@ -1,9 +1,9 @@
 package de.robiasto.app.user.detail.domain;
 
 import de.robiasto.app.user.domain.Gender;
-import de.robiasto.app.user.infrastructure.Position;
-import de.robiasto.app.user.infrastructure.UserId;
-import de.robiasto.app.user.infrastructure.UserRole;
+import de.robiasto.app.user.domain.Position;
+import de.robiasto.app.user.domain.UserId;
+import de.robiasto.app.user.domain.UserRole;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
