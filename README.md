@@ -1,15 +1,18 @@
 # Annotation to fragment
-> This README was generated with the assistance of Claude AI (2024) in cursor.
 
 ## Overview
 The Fragment Annotation Core Module provides a type-safe, annotation-based approach for handling Thymeleaf fragments in Spring Boot applications. It bridges Java code and Thymeleaf templates through annotations and strongly-typed fragment classes.
 
+## About
+While working through the book *[Taming Thymeleaf](https://www.wimdeblauwe.com/books/taming-thymeleaf/)*, I came up with the idea of abstracting individual components to make them reusable.  
+
 ## Project Structure
 
-annotation_view/<br>
-├── example_app/        # Example application using the fragment module<br>
-├── core/           # Core fragment annotation module<br>
-└── README.md          # This file
+### Module: core
+The core module enables the creation of annotations that define the output in classes via annotations configuration.
+
+### Module: emxample_app
+The example app module implements the Application from the book *Taming Thymeleaf* through components.
 
 ## Key Features
 
@@ -128,3 +131,5 @@ Contributions are welcome! Please read our Contributing Guide for details.
 
 ## License
 This project is licensed under the [MIT License](./LICENSE) - see the LICENSE file for details.
+
+> This README was generated with the assistance of Claude AI (2024) in cursor.
