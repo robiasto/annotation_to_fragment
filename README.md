@@ -13,6 +13,7 @@ The core module enables the creation of annotations that define the output in cl
 
 ### Module: emxample_app
 The example app module implements the Application from the book *Taming Thymeleaf* through components.
+Readme: [example_app/README.md](./example_app/README.md)
 
 ## Key Features
 
